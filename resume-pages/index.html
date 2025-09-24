@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Raju R. Yadav – Professional Laravel and PHP Developer with 3+ years experience, specializing in scalable web applications and APIs." />
+        <meta name="author" content="Raju R. Yadav" />
+
+        <title>Raju R Yadav - PHP Full Stack Developer</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <style>
+        /* Existing styles remain unchanged */
+        #backToTop {
+            display: none; 
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 100;
+            background-color: #bd5d38; 
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        #backToTop:hover {
+            background-color: #974a2d;
+            transform: translateY(-3px);
+        }
+        
+        /* Project Section Styles */
+        .project-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .highlight-card {
+            border-left: 4px solid #bd5d38;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .section-heading {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #bd5d38;
+        }
+
+        .section-subheading {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .roles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .role-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .role-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .role-item i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            width: 20px;
+            color: #bd5d38;
+        }
+
+        .card-title {
+            color: #343a40;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: 6c757d;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: #495057;
+            line-height: 1.6;
+        }
+        
+        /* Skills section improvements */
+        .skill-category {
+            margin-bottom: 25px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .skill-pill {
+            padding: 6px 12px;
+            background-color: #f8f9fa;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-pill:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .roles-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-stack {
+                justify-content: center;
+            }
+            
+            .project-card {
+                margin-bottom: 20px;
+            }
+            
+            .section-heading:after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40px;
+            }
+            
+            #backToTop {
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 12px;
+                font-size: 16px;
+            }
+        }
+        
+        /* NEW: Loading animation */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #bd5d38;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* NEW: Scroll progress indicator */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: #bd5d38;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* NEW: Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* NEW: Print resume button */
+        .print-resume {
+            position: fixed;
+            bottom: 100px;
+            right: 40px;
+            z-index: 99;
+            background-color: #343a40;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .print-resume:hover {
+            background-color: #23272b;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .print-resume {
+                bottom: 90px;
+                right: 20px;
+                padding: 8px 12px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <body id="page-top">
+        <!-- NEW: Loading animation -->
+        <div id="loading">
+            <div class="spinner"></div>
+        </div>
+        
+        <!-- NEW: Scroll progress indicator -->
+        <div class="progress-container">
+            <div class="progress-bar" id="myProgressBar"></div>
+        </div>
+        
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">
+                    Raju R. Yadav<br />
+                    <small class="text-white">PHP Full Stack Developer</small>
+                </span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/rjprofile.jpg" alt="Raju R. Yadav Profile Picture" /><br><small class="text-white">PHP Full Stack Developer</small>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#languages">Languages</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="mb-0 section-heading fade-in">
+                        Raju R.
+                        <span class="text-primary">Yadav</span>
+                    </h1>
+                    <div class="subheading mb-5 fade-in">
+                        Shivaji Nagar, G.B. Road,  Manpada, Thane (W) · 
+                        <a href="tel:+918454850375">+91 8454850375</a> ·
+                        <a href="mailto:rajuyadav.sahyog@gmail.com">rajuyadav.sahyog@gmail.com</a>
+                    </div>
+                    
+
+                    <p class="lead mb-5 fade-in">Dedicated PHP developer with 3+ years of experience in web development, specializing in building robust, scalable applications using Laravel and CodeIgniter. Skilled in technical analysis, unit testing, and producing clear, comprehensive documentation. Committed to writing clean, efficient code and delivering web solutions that effectively address real-world challenges.</p>
+                    <p class="lead mb-5 fade-in">Experienced in Agile development environments, with a strong emphasis on team collaboration, continuous improvement, and delivering high-quality software that aligns with business objectives.</p>
+
+                    <div class="social-icons fade-in">
+                        <a class="social-icon" href="https://www.linkedin.com/in/raju-yadav1298" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="https://github.com/rajuyadav1998" target="_blank"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="assets/Resumes/RAJU_YADAV_RESUME.pdf" download title="Download Resume">
+                            <i class="fas fa-file-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5 section-heading fade-in">Experience</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 fade-in">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Senior Programmer</h3>
+                            <div class="subheading mb-3">Silver Touch Technologies</div>
+                            <div class="subheading mb-3">Client: Bombay High Court</div>
+                            <p>Designed, developed, and implemented the official New <b>Bombay High Court Website, Admin Portal, JO Portal </b> application, and related internal systems, delivering updates and modifications based on technical and functional requirements.</p>
+                            <p>Developed and optimized database queries using PostgreSQL to ensure efficient data retrieval and management.</p>
+                            <p>Identified, troubleshot, and resolved technical issues to maintain smooth and secure website functionality.</p>
+                            <p>Demonstrated newly developed modules to stakeholders, ensuring clear understanding of features and functionality.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">March 2025 - Present</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 fade-in">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">PHP Laravel Developer</h3>
+                            <div class="subheading mb-3">K DigitalCurry</div>
+                            <p>Developed web applications using PHP and MySQL, ensuring efficient and scalable solutions for various projects, including: <b>Shah Insurance, IIGINDIA, Lcooverji, Swan Food Pack, UltraLabs, PCDA Navy, Yallameal, Advanced Medilinks Pvt. Ltd., and DiaGold Creation.</b></p>
+                            <p>Designed and managed MySQL database architecture, optimizing performance and ensuring data integrity.</p>
+                            <p>Conducted regular maintenance of applications to ensure functionality and security.</p>
+                            <p>Implemented new features in applications according to clients' requirements, enhancing user experience and satisfaction</p>
+                            <p>Provided technical solutions to clients and coordinated effectively to understand and address their needs.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">January 2023 - November 2024</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 fade-in">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Freelance PHP Developer</h3>
+                            <p>Designed and developed customized web applications for multiple clients, ensuring high performance and robust security.</p>
+                            <p>Executed various freelance projects, including CMS websites, portfolio websites, and applications.</p>
+                            <p>Utilized Laravel and CodeIgniter frameworks to build scalable applications.</p>
+                            <p>Provided maintenance, debugging, and optimization services to improve website performance.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">December 2021 - December 2022</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between fade-in">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">PHP Developer</h3>
+                            <div class="subheading mb-3">Ecom Retails</div>
+                            <p>Contributed to the development of an internal software solution using PHP, HTML, CSS, JavaScript, jQuery, Bootstrap, and MySQL within the Laravel framework.</p>
+                            <p>Integrated third-party and internal APIs seamlessly using Laravel</p>
+                            <p>Developed dynamic reports to retrieve and display data from the database in a clear, structured format using HTML, CSS, and JavaScript.</p>
+                            <p>Resolved bugs and improved system to enhance user experience.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">May 2021 - November 2021</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between fade-in">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">PHP Developer</h3>
+                            <div class="subheading mb-3">The Mitra Solutions</div>
+                            <p>Developed front-end and back-end components for web applications, integrating SQL database queries for seamless data interaction.</p>
+                            <p>Contributed to the creation of internal software solutions using PHP, HTML, CSS, JavaScript, jQuery, Bootstrap, and MySQL.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">March 2020 - August 2020</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Projects Section -->
+            <section class="resume-section" id="projects">
+                <div class="resume-section-content">
+                    <h2 class="mb-5 section-heading fade-in">Projects</h2>
+                    
+                    <!-- Bombay High Court Project -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h4 class="card-title">Bombay High Court Website</h4>
+                                <span class="badge bg-primary">Featured</span>
+                            </div>
+                            <p class="card-subtitle mb-2 text-muted">Admin Portal and JO Portal</p>
+                            <p><strong>URL:</strong> <a href="https://bombayhighcourt.gov.in" target="_blank" rel="noopener noreferrer">https://bombayhighcourt.gov.in</a></p>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">PostgreSQL</span>
+                                <span class="badge bg-secondary">Laravel 11</span>
+                            </div>
+                            <p class="card-text">
+                                Developed the official website with admin and judicial officer portals for one of India's most prestigious judicial institutions.
+                            </p>
+                            <p class="card-text">
+                                Engineered a robust web solution for the Bombay High Court, including dedicated admin and judicial officer portals. The platform supports secure document handling, case management workflows, and user access controls, enhancing operational efficiency for one of India's leading judicial bodies.
+                            </p>
+                            <p class="card-text">
+                                Designed, developed, and implemented the official <strong>Bombay High Court Website, Admin Portal, and JO Portal</strong> application, along with internal systems. Regularly delivered updates and modifications aligned with evolving technical and functional requirements.
+                            </p>
+                            <p class="card-text">
+                                Developed and optimized complex database queries using <strong>PostgreSQL</strong> to ensure efficient data retrieval and management.
+                            </p>
+                            <p class="card-text">
+                                Identified, troubleshot, and resolved technical issues to maintain secure, reliable, and uninterrupted functionality.
+                            </p>
+                            <p class="card-text">
+                                Presented newly developed features and modules to stakeholders, ensuring clarity and alignment with their expectations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- DiaGold Creation Portal -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">DiaGold Creation Customer Portal and Admin Portal</h4>
+                            <p><strong>URL:</strong> <a href="https://dg.kdcstaging.in" target="_blank" rel="noopener noreferrer">https://dg.kdcstaging.in</a></p>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">Laravel 8</span>
+                            </div>
+                            <p class="card-text">
+                                Designed and developed a comprehensive web application tailored for DiaGold Creation, a jewellery manufacturing company. The platform includes both <strong>Customer Portal</strong> and <strong>Admin Portal</strong> functionalities.
+                            </p>
+                            <p class="card-text">
+                                The <strong>Customer Portal</strong> allows registered clients to:
+                                <ul>
+                                    <li>Browse detailed product catalogs with specifications and images.</li>
+                                    <li>Create product inquiries directly from the catalog.</li>
+                                    <li>Access a personal dashboard with saved inquiries and responses.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                The <strong>Admin Portal</strong> features:
+                                <ul>
+                                    <li>Product management tools for creating, updating, and categorizing jewellery items.</li>
+                                    <li>Inquiry management dashboard to view and respond to customer requests.</li>
+                                    <li>Automated quotation generation and response handling with product linking.</li>
+                                    <li>Customer folder management with history of interactions and inquiry records.</li>
+                                    <li>Dynamic catalog generation for seasonal or promotional collections.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Developed with <strong>Laravel 8 and MySQL</strong>, the platform ensures smooth performance, secure access, and modular scalability. Conducted regular maintenance, added new features based on client feedback, and ensured optimal database structure for performance and data integrity.
+                            </p>
+                            <p class="card-text">
+                                Actively collaborated with stakeholders to gather requirements, propose technical solutions, and ensure smooth project delivery from concept to deployment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Medilinks Website -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">Advanced Medilinks Website and Admin Portal</h4>
+                            <p><strong>URL:</strong> <a href="https://www.advancemedilinks.com/" target="_blank" rel="noopener noreferrer">https://www.advancemedilinks.com/</a></p>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">Laravel 8</span>
+                            </div>
+                            <p class="card-text">
+                                Developed a feature-rich healthcare service platform for <strong>Advanced Medilinks Pvt. Ltd.</strong>, a company focused on <strong>genomic testing and cancer diagnostics</strong>. The platform serves both patients and healthcare professionals through a secure and user-friendly web interface and integrated mobile APIs.
+                            </p>
+                            <p class="card-text">
+                                The <strong>patient-facing platform</strong> — accessible via both the <strong>website</strong> and <strong>mobile app</strong> — allows users to:
+                                <ul>
+                                    <li>Browse and select custom cancer-related diagnostic tests.</li>
+                                    <li>Fill out detailed forms with personal and medical information.</li>
+                                    <li>Make payments through <strong>CCAvenue</strong> with support for both online and offline modes.</li>
+                                    <li>Receive booking confirmations, access reports, and track test progress.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                The <strong>Admin Panel</strong> provides:
+                                <ul>
+                                    <li>Management of patient submissions and test selections.</li>
+                                    <li>Real-time payment status tracking and reconciliation.</li>
+                                    <li>Control over test catalogs, pricing, and form configuration.</li>
+                                    <li>Workflow support for tracking test processing and reporting.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Additionally, built and deployed <strong>three dedicated Laravel-based APIs</strong> to support mobile application functionality:
+                                <ul>
+                                    <li><strong>Patient API</strong>: Powers both the website and mobile app, enabling test selection, profile management, payment processing, and result tracking.</li>
+                                    <li><strong>Doctor API</strong>: Allows doctors to review patient data, assign appropriate tests, and access diagnostic reports.</li>
+                                    <li><strong>Representative API</strong>: Enables sales or medical representative to register new patients, monitor progress, and manage communications.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Ensured compliance with healthcare data standards, implemented secure form processing and payment flows, and conducted regular maintenance and updates for improved stability and user satisfaction.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Yallameal Website -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">Yallameal Website, Admin Portal and Customer Portal</h4>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">CodeIgniter 4</span>
+                            </div>
+                            <p class="card-text">
+                                Developed a dynamic food delivery and catering platform serving the Dubai market, focused on multi-cuisine tiffin services with customizable meal plans and flexible ordering options.
+                            </p>
+                            <p class="card-text">
+                                The <strong>Website and Customer Portal</strong> allow users to:
+                                <ul>
+                                    <li>Browse an extensive menu featuring multiple cuisines, updated regularly.</li>
+                                    <li>Select meal plans for varied durations — single day, 3 days, 6 days, 15 days, or monthly subscriptions.</li>
+                                    <li>Choose the number of meals per day (1, 2, or 3) and specify exact dates for meal delivery.</li>
+                                    <li>Complete detailed customer information forms and place orders seamlessly.</li>
+                                    <li>Proceed through a secure payment gateway integration for online payments.</li>
+                                    <li>Log in to the customer portal to view order history, track order status, and manage subscriptions.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                The <strong>Admin Panel</strong> offers:
+                                <ul>
+                                    <li>Comprehensive order management with real-time status updates including pending, completed, and cancelled orders.</li>
+                                    <li>Customer management and detailed order tracking.</li>
+                                    <li>Interactive dashboards displaying monthly and yearly order volumes and revenue analytics.</li>
+                                    <li>Menu management tools to update cuisine offerings and availability.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Built using <strong>CodeIgniter 4</strong> and <strong>MySQL</strong>, the platform ensures robust performance, scalable architecture, and secure handling of customer data and payments, enhancing operational efficiency for both customers and administrators.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PCDA Navy Website -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">PCDA Navy Website and Admin Portal</h4>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">Laravel 9</span>
+                            </div>
+                           <p class="card-text">
+                                Developed the official website and secure admin portal for the <strong>Principal Controller of Defence Accounts (PCDA) Navy</strong>, providing a centralized platform for managing financial and administrative information related to naval accounting operations.
+                            </p>
+                            <p class="card-text">
+                                Key features include:
+                                <ul>
+                                    <li>Robust document management system for storing and retrieving official records and financial documents.</li>
+                                    <li>Role-based access control ensuring secure and authorized user access.</li>
+                                    <li>Custom reporting tools tailored to naval accounting and auditing requirements.</li>
+                                    <li>Efficient management of workflows with audit trails and transaction tracking.</li>
+                                    <li>Responsive design ensuring accessibility across devices for naval officers and staff.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Built on <strong>Laravel 9</strong> with a MySQL backend, the portal emphasizes security, performance, and scalability to meet the sensitive needs of defense financial administration.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- IIGINDIA Website -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">IIGINDIA Website</h4>
+                            <p><strong>URL:</strong> <a href="https://iigindia.com/" target="_blank" rel="noopener noreferrer">https://iigindia.com/</a></p>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">Laravel 8</span>
+                            </div>
+                            <p class="card-text">
+                                Developed a comprehensive educational platform for <strong>IIG India</strong>, a leading institute specializing in gems and jewellery education. The website offers detailed information on various educational programs, diamond and jewellery learning resources, and industry insights.
+                            </p>
+                            <p class="card-text">
+                                Key features include:
+                                <ul>
+                                    <li>Informative sections on jewellery and diamond education to assist users in course selection.</li>
+                                    <li>User-friendly inquiry system allowing prospective students to request information directly from the admin via email.</li>
+                                    <li>Responsive design ensuring seamless access across devices.</li>
+                                    <li>Secure backend for managing inquiries and educational content updates.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Built with <strong>Laravel 8</strong> and MySQL, the platform ensures reliability and scalability while delivering an engaging and professional user experience aligned with international education standards.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Lcooverji Website -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">Lcooverji Website with Admin Portal</h4>
+                            <p><strong>URL:</strong> <a href="https://cooverji.com/" target="_blank" rel="noopener noreferrer">https://cooverji.com/</a></p>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">Laravel 8</span>
+                            </div>
+                            <p class="card-text">
+                                Developed an informational website and admin portal for <strong>Lakhmichand Cooverji & Co.</strong>, a leading manufacturer and supplier of 100% waterproof tarpaulins and structural shed solutions including monsoon sheds and pre-engineered buildings (PEBs).
+                            </p>
+                            <p class="card-text">
+                                The <strong>Website</strong> includes:
+                                <ul>
+                                    <li>Comprehensive product catalog organized by tarpaulin categories and industrial use cases.</li>
+                                    <li>Detailed product pages with specifications, use cases, and visuals.</li>
+                                    <li>Customer inquiry form allowing users to request quotes or product information, routed via email to the admin.</li>
+                                    <li>Mobile-responsive interface for easy browsing across all devices.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                The <strong>Admin Portal</strong> features:
+                                <ul>
+                                    <li>Centralized management of product listings and categories.</li>
+                                    <li>Inquiry tracking system integrated with email notifications for timely responses.</li>
+                                    <li>Backend dashboard to manage website content and customer communications.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Built using <strong>Laravel 8</strong> and <strong>MySQL</strong>, the system is optimized for reliability, secure content management, and efficient lead generation through the inquiry workflow.
+                            </p>>
+                        </div>
+                    </div>
+
+                    <!-- Swan Food Pack Website -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">Swan Food Pack Website</h4>
+                            <p><strong>URL:</strong> <a href="https://swanfoodpack.com/" target="_blank" rel="noopener noreferrer">https://swanfoodpack.com/</a></p>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">Laravel 8</span>
+                            </div>
+                            <p class="card-text">
+                                Developed a fully responsive and user-friendly website for <strong>Swan International</strong>, a premier manufacturer specializing in disposable food packaging products such as pizza boxes, coffee cups, and other packaging solutions.
+                            </p>
+                            <p class="card-text">
+                                Key features include:
+                                <ul>
+                                    <li>Comprehensive product catalog organized by categories, sizes, and types for easy browsing.</li>
+                                    <li>Detailed product pages showcasing specifications, dimensions, and materials.</li>
+                                    <li>User inquiry form enabling prospective clients to request quotes or additional information directly from the admin via email.</li>
+                                    <li>Mobile-optimized design ensuring seamless access across devices.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Built on a <strong>Laravel 8</strong> backend with a <strong>MySQL</strong> database, the platform offers robust content management and secure handling of client communications.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- UltraLabs Website -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">UltraLabs Website and Admin Portal</h4>
+                            <p><strong>URL:</strong> <a href="https://ultralabs.co.in/" target="_blank" rel="noopener noreferrer">https://ultralabs.co.in/</a></p>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">Laravel 8</span>
+                            </div>
+                             <p class="card-text">
+                                Created a detailed and dynamic website paired with an admin portal for <strong>Ultra Labs</strong>, a specialized oil condition monitoring laboratory catering to the oil and gas industry.
+                            </p>
+                            <p class="card-text">
+                                Features include:
+                                <ul>
+                                    <li>Fully manageable website content via admin portal, allowing updates to all informational sections.</li>
+                                    <li>Inquiry submission system enabling clients to request information or services directly, routed to admin via email.</li>
+                                    <li>Secure backend tools for managing laboratory data, reports, and client communications efficiently.</li>
+                                    <li>Responsive design ensuring optimal usability across devices.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Built with <strong>Laravel 8</strong> and <strong>MySQL</strong>, the platform ensures secure data handling and scalable content management to support Ultra Labs’ operational needs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Shah Insurance Website -->
+                    <div class="card project-card mb-4 highlight-card fade-in">
+                        <div class="card-body">
+                            <h4 class="card-title">Shah Insurance Website</h4>
+                            <p><strong>URL:</strong> <a href="https://www.shahinsurance.co.in/" target="_blank" rel="noopener noreferrer">https://www.shahinsurance.co.in/</a></p>
+                            <div class="tech-stack mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">Bootstrap 5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">jQuery</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                                <span class="badge bg-secondary">Laravel 8</span>
+                            </div>
+                            <p class="card-text">
+                                Developed an informative and user-friendly website for <strong>Shah Insurance</strong> that provides comprehensive details about various insurance policies, claims processes, and services offered.
+                            </p>
+                            <p class="card-text">
+                                Key features include:
+                                <ul>
+                                    <li>Detailed policy information and service descriptions for easy customer understanding.</li>
+                                    <li>Customer inquiry and request system enabling users to submit enquiries via email directly to the admin.</li>
+                                    <li>Secure admin portal to efficiently manage leads, customer queries, and policy documentation.</li>
+                                    <li>Responsive design to ensure seamless access across all devices.</li>
+                                </ul>
+                            </p>
+                            <p class="card-text">
+                                Built using <strong>Laravel 8</strong> with a <strong>MySQL</strong> backend, the platform ensures scalable management and secure handling of customer data.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <h3 class="mt-5 mb-3 section-subheading fade-in">Roles & Responsibilities</h3>
+                    <div class="roles-container">
+                        <div class="role-item highlight-card fade-in">
+                            <i class="fas fa-sync-alt"></i> &ensp;
+                            <span>Maintained website content to ensure accuracy and relevance.</span>
+                        </div>
+                        <div class="role-item highlight-card fade-in">
+                            <i class="fas fa-cogs"></i>&ensp;
+                            <span>Developed functional modules for the admin portal to enhance user experience and streamline operations.</span>
+                        </div>
+                        <div class="role-item highlight-card fade-in">
+                            <i class="fas fa-mobile-alt"></i>&ensp;
+                            <span>Created APIs for mobile apps to facilitate seamless integration and data exchange.</span>
+                        </div>
+                        <div class="role-item highlight-card fade-in">
+                            <i class="fas fa-clipboard-list"></i>&ensp;
+                            <span>Gathered requirements from clients and designed workflows to meet their needs effectively.</span>
+                        </div>
+                        <div class="role-item highlight-card fade-in">
+                            <i class="fas fa-bug"></i>&ensp;
+                            <span>Resolved bugs in the application promptly to ensure optimal performance and user satisfaction.</span>
+                        </div>
+                        <div class="role-item highlight-card fade-in">
+                            <i class="fas fa-desktop"></i>&ensp;
+                            <span>Demonstrated new modules to clients, ensuring they understand the features and functionalities effectively.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5 section-heading fade-in">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 fade-in">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Dr. C. V. Raman University / Sahyog College of Management Studies</h3>
+                            <div class="subheading mb-3">Bachelor of Computer Application</div>
+                            <div>Information Technologies</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2017 - 2020</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between fade-in">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Maharashtra Board</h3>
+                            <div class="subheading mb-3">HSC (Higher Secondary Certificate)</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2017</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between fade-in">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Maharashtra Board</h3>
+                            <div class="subheading mb-3">SSC (Secondary School Certificate)</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2015</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Skills-->
+            <section class="resume-section" id="skills">
+                <div class="resume-section-content">
+                    <h2 class="mb-5 section-heading fade-in">Skills</h2>
+                    
+                    <div class="skill-category fade-in">
+                        <div class="subheading mb-3">Frontend Technologies</div>
+                        <div class="skill-list">
+                            <span class="skill-pill">HTML5</span>
+                            <span class="skill-pill">CSS3</span>
+                            <span class="skill-pill">JavaScript</span>
+                            <span class="skill-pill">jQuery</span>
+                            <span class="skill-pill">Bootstrap</span>
+                            <span class="skill-pill">Ajax</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div class="subheading mb-3">Backend Technologies</div>
+                        <div class="skill-list">
+                            <span class="skill-pill">PHP</span>
+                            <span class="skill-pill">Laravel</span>
+                            <span class="skill-pill">CodeIgniter</span>
+                            <span class="skill-pill">API Development</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div class="subheading mb-3">Databases</div>
+                        <div class="skill-list">
+                            <span class="skill-pill">MySQL</span>
+                            <span class="skill-pill">PostgreSQL</span>
+                            <span class="skill-pill">Database Design</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div class="subheading mb-3">Tools & Platforms</div>
+                        <div class="skill-list">
+                            <span class="skill-pill">Git</span>
+                            <span class="skill-pill">Windows</span>
+                            <span class="skill-pill">Ubuntu</span>
+                            <span class="skill-pill">RESTful APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="subheading mb-3 mt-4 fade-in">Workflow</div>
+                    <ul class="fa-ul mb-0">
+                        <li class="fade-in">
+                            <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                            HTML5, CSS3 & JavaScript Development
+                        </li>
+                        <li class="fade-in">
+                            <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                            jQuery & AJAX Integration
+                        </li>
+                        <li class="fade-in">
+                            <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                            PHP Backend & Laravel / CodeIgniter Frameworks
+                        </li>
+                        <li class="fade-in">
+                            <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                            MySQL Database Management & API Integration
+                        </li>
+                        <li class="fade-in">
+                            <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                            Git Version Control & Collaborative Development
+                        </li>
+                        <li class="fade-in">
+                            <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                            Deployment on Windows & Ubuntu Servers
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Interests-->
+            <section class="resume-section" id="interests">
+                <div class="resume-section-content">
+                    <h2 class="mb-5 section-heading fade-in">Interests</h2>
+                    <ul class="list-unstyled">
+                        <li class="fade-in"><i class="fas fa-cricket text-primary"></i> Playing Cricket & Kabaddi</li>
+                        <li class="fade-in"><i class="fas fa-plane text-primary"></i> Travelling</li>
+                        <li class="fade-in"><i class="fas fa-bicycle text-primary"></i> Cycling</li>
+                        <li class="fade-in"><i class="fas fa-laptop-code text-primary"></i> Exploring the Internet & New Technologies</li>
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Awards-->
+            <section class="resume-section" id="awards">
+                <div class="resume-section-content">
+                    <h2 class="mb-5 section-heading fade-in">Awards & Certifications</h2>
+                    <ul class="fa-ul mb-0">
+                        <li class="fade-in">
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            Best Student Award – Recognized for academic excellence and leadership (2015)
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Languages Known -->
+             <section class="resume-section" id="languages">
+                <div class="resume-section-content">
+                    <h2 class="mb-5 section-heading fade-in">Languages Known</h2>
+                    <ul class="fa-ul mb-0">
+                        <li class="fade-in"><span class="fa-li"><i class="fas fa-language text-primary"></i></span>English</li>
+                        <li class="fade-in"><span class="fa-li"><i class="fas fa-language text-primary"></i></span>Hindi</li>
+                        <li class="fade-in"><span class="fa-li"><i class="fas fa-language text-primary"></i></span>Marathi</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        
+        <!-- NEW: Print resume button -->
+        <a href="javascript:window.print()" class="print-resume" title="Print Resume">
+           <i class="fas fa-print"></i>
+        </a>
+        
+        <a href="#page-top" id="backToTop" title="Back to Top">
+           <i class="fas fa-arrow-up"></i>
+        </a>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+            // Back to top button
+            window.onscroll = function() {
+                const btn = document.getElementById("backToTop");
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    btn.style.display = "block";
+                } else {
+                    btn.style.display = "none";
+                }
+                
+                // NEW: Scroll progress indicator
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("myProgressBar").style.width = scrolled + "%";
+            };
+            
+            // NEW: Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // NEW: Loading animation
+            window.addEventListener('load', function() {
+                const loading = document.getElementById('loading');
+                setTimeout(function() {
+                    loading.style.opacity = '0';
+                    setTimeout(function() {
+                        loading.style.display = 'none';
+                    }, 500);
+                }, 800);
+            });
+            
+            // NEW: Fade-in animation on scroll
+            function checkFade() {
+                const fadeElements = document.querySelectorAll('.fade-in');
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkFade);
+            window.addEventListener('load', checkFade);
+            
+            // NEW: Skill pills animation
+            const skillPills = document.querySelectorAll('.skill-pill');
+            skillPills.forEach((pill, index) => {
+                pill.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Targeted scroll handler for Projects section
+            window.addEventListener('scroll', function() {
+                const projectsSection = document.querySelector('#projects');
+                const projectsLink = document.querySelector('a[href="#projects"]');
+                
+                if (projectsSection && projectsLink) {
+                    const sectionTop = projectsSection.offsetTop - 100; // Adjust for navbar height
+                    const sectionHeight = projectsSection.offsetHeight;
+                    const scrollPosition = window.scrollY;
+                    
+                    // Add active class to Projects link when section is in view
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        projectsLink.classList.add('active');
+                    } else {
+                        projectsLink.classList.remove('active');
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
